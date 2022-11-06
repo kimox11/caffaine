@@ -47,7 +47,6 @@ class Register : AppCompatActivity() {
             if(validate(user,confirmationPassword)) {
                 intent.putExtra("email", email_edit_text.getText().toString())
                 intent.putExtra("password", password_edit_text.getText().toString())
-                intent.putExtra("user", password_edit_text.getText().toString())
                 userManager.users.add(user)
                 setResult(55, intent)
                 finish()

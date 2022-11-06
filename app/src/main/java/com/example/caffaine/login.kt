@@ -8,6 +8,7 @@ import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
+import android.widget.Toast
 import androidx.activity.result.ActivityResultCallback
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
@@ -36,32 +37,28 @@ class login : AppCompatActivity() {
         go_to_home.setOnClickListener {
             var intent = Intent(this,HomeScreen::class.java)
             if(validate()) {
-                //getResult.launch(intent)
-                go_to_signup.setText(userManager.users.get(0).Email)
+                startActivity(intent)
+
             }
         }
     }
 
     private fun validate(): Boolean {
-        var email = email_edit_text.getText().toString()
-        var password = password_edit_text.getText().toString()
-        var result = true
-        var error = ""
+        var email = email_edit_text.text.toString()
+        var password = password_edit_text.text.toString()
+        var result = false
+        var error = "Email or password not valid"
 
-
-        if(password.length < 8){
-            error = "This password is too short"
-            password_edit_text.setError(error)
-            password_edit_text.requestFocus();
-            result = false
+        userManager.users.forEach{
+            if(it.Email.equals(email) && it.Password.equals(password)){
+                userManager.currentUser = it
+                result = true
+                return result
+            }
         }
-        if (!email.contains("@") || !email.contains(".com")){
-            error = "Please put valid email"
-            email_edit_text.setError(error)
-            email_edit_text.requestFocus();
-            result = false
-        }
-
+        email_edit_text.setError("")
+        password_edit_text.setError("")
+        Toast.makeText(this, error, Toast.LENGTH_SHORT).show()
 
 
         return result
