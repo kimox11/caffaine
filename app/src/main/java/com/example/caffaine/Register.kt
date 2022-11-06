@@ -6,12 +6,12 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageButton
-import android.widget.TextView
 
 class Register : AppCompatActivity() {
     lateinit var back_button: ImageButton
     lateinit var sign_up_button: Button
-    lateinit var firstname_edit_text : TextView
+    lateinit var firstname_edit_text : EditText
+    lateinit var lastname_edit_text : EditText
     lateinit var email_edit_text: EditText
     lateinit var password_edit_text: EditText
     lateinit var phonenumber_edit_text: EditText
@@ -22,7 +22,8 @@ class Register : AppCompatActivity() {
         setContentView(R.layout.signup)
         back_button = findViewById(R.id.b_button)
         sign_up_button = findViewById(R.id.sign_up_button)
-//        firstname_edit_text = findViewById(R.id.)
+        firstname_edit_text = findViewById(R.id.firstName_reg)
+        lastname_edit_text = findViewById(R.id.lastName_reg)
         email_edit_text = findViewById(R.id.email_reg)
         password_edit_text = findViewById(R.id.password_reg)
         confirmation_password_edit_text = findViewById(R.id.password_reg_confirm)
@@ -36,52 +37,67 @@ class Register : AppCompatActivity() {
 
 
         sign_up_button.setOnClickListener {
-            if(validate()) {
+            var firstName = firstname_edit_text.text.toString()
+            var lastName  = lastname_edit_text.text.toString()
+            var email = email_edit_text.text.toString()
+            var password = password_edit_text.text.toString()
+            var phoneNumber = phonenumber_edit_text.text.toString()
+            var confirmationPassword = confirmation_password_edit_text.text.toString()
+            var user:user = user(firstName,lastName,email,password,phoneNumber)
+            if(validate(user,confirmationPassword)) {
                 intent.putExtra("email", email_edit_text.getText().toString())
                 intent.putExtra("password", password_edit_text.getText().toString())
-//                intent.putExtra("password", password_edit_text.getText().toString())
+                intent.putExtra("user", password_edit_text.getText().toString())
+                userManager.users.add(user)
                 setResult(55, intent)
                 finish()
-            }else{
-
             }
         }
 
 
     }
 
-    private fun validate(): Boolean {
-        var email = email_edit_text.getText().toString()
-        var password = password_edit_text.getText().toString()
-        var phoneNumber = phonenumber_edit_text.getText().toString()
-        var confirmationPassword = confirmation_password_edit_text.getText().toString()
+    private fun validate(user:user,confirmationPassword:String): Boolean {
+
         var result = true
-        if(phoneNumber.length != 12){
+        if(user.PhoneNumber.length != 11){
             error = "The phone number is not valid"
             phonenumber_edit_text.setError(error)
             phonenumber_edit_text.requestFocus();
             result = false
         }
-        if(!password.equals(confirmationPassword)){
+        if(!user.Password.equals(confirmationPassword)){
             error = "The confirmation password is not valid"
             confirmation_password_edit_text.setError(error)
             confirmation_password_edit_text.requestFocus();
             result = false
         }
-        if(password.length < 8){
+        if(user.Password.length < 8){
             error = "This password is too short"
             password_edit_text.setError(error)
             password_edit_text.requestFocus();
             result = false
         }
-        if (!email.contains("@") || !email.contains(".com")){
+        if (!user.Email.contains("@") || !user.Email.contains(".com")){
             error = "Please put valid email"
             email_edit_text.setError(error)
             email_edit_text.requestFocus();
             result = false
         }
 
+        if (user.LastName.isBlank()){
+            error = "Please put valid name"
+            lastname_edit_text.setError(error)
+            lastname_edit_text.requestFocus();
+            result = false
+        }
 
+        if (user.FirstName.isBlank()){
+            error = "Please put valid name"
+            firstname_edit_text.setError(error)
+            firstname_edit_text.requestFocus();
+            result = false
+        }
 
         return result
     }

@@ -36,8 +36,8 @@ class login : AppCompatActivity() {
         go_to_home.setOnClickListener {
             var intent = Intent(this,HomeScreen::class.java)
             if(validate()) {
-                getResult.launch(intent)
-
+                //getResult.launch(intent)
+                go_to_signup.setText(userManager.users.get(0).Email)
             }
         }
     }
