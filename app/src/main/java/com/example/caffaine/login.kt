@@ -35,7 +35,8 @@ class login : AppCompatActivity() {
         }
 
         go_to_home.setOnClickListener {
-            var intent = Intent(this,HomeScreen::class.java)
+            var intent = Intent(this,DownloadPhoto::class.java)
+            startActivity(intent)
             if(validate()) {
                 startActivity(intent)
 
