@@ -16,6 +16,7 @@
         android:ems="10"
         android:hint="Enter photo's url"
         android:minHeight="48dp"
+        android:maxLines="3"
         android:text=""
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -37,11 +38,13 @@
 
     <ImageView
         android:id="@+id/image_download"
-        android:layout_width="200dp"
-        android:layout_height="188dp"
-        android:layout_marginTop="92dp"
+        android:layout_width="376dp"
+        android:layout_height="298dp"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="28dp"
+        android:scaleType="fitXY"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.571"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:srcCompat="@tools:sample/avatars" />
