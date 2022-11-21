@@ -27,7 +27,7 @@ class HomeScreen : AppCompatActivity() {
         click_bttonn.setOnClickListener(){
             stopService(Intent(this,MyService::class.java))
         }
-        welcome_edit_text.setText("Hello..! "+userManager.currentUser?.FirstName+" "+userManager.currentUser?.LastName)
+        welcome_edit_text.setText("Hello.. "+userManager.currentUser?.FirstName+" "+userManager.currentUser?.LastName + " !")
 //        click_button.setOnClickListener(){
 //            if(!mediaPlayer.isPlaying){
 //                mediaPlayer.start()

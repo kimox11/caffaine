@@ -1,7 +1,9 @@
 package com.example.caffaine
 
+import android.annotation.SuppressLint
 import android.app.Activity
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.util.Log
 import android.view.View
@@ -16,10 +18,10 @@ import androidx.appcompat.app.AppCompatActivity
 
 
 class login : AppCompatActivity() {
-    lateinit var go_to_signup : TextView
-    lateinit var email_edit_text : EditText
-    lateinit var password_edit_text : EditText
-    lateinit var go_to_home : Button
+    lateinit var go_to_signup: TextView
+    lateinit var email_edit_text: EditText
+    lateinit var password_edit_text: EditText
+    lateinit var go_to_home: Button
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
@@ -30,37 +32,53 @@ class login : AppCompatActivity() {
 
 
         go_to_signup.setOnClickListener {
-            var intent = Intent(this,Register::class.java)
+            var intent = Intent(this, Register::class.java)
             getResult.launch(intent)
         }
 
         go_to_home.setOnClickListener {
-            var intent = Intent(this,DownloadPhoto::class.java)
-            startActivity(intent)
-            if(validate()) {
+            var intent = Intent(this, HomeScreen::class.java)
+            //startActivity(intent)
+            if (validate()) {
                 startActivity(intent)
 
             }
         }
     }
 
+    @SuppressLint("Range")
     private fun validate(): Boolean {
         var email = email_edit_text.text.toString()
         var password = password_edit_text.text.toString()
         var result = false
-        var error = "Email or password not valid"
 
-        userManager.users.forEach{
-            if(it.Email.equals(email) && it.Password.equals(password)){
-                userManager.currentUser = it
-                result = true
-                return result
-            }
+        // creating a cursor object of the
+        // content URI
+        val cursor = contentResolver.query(
+            Uri.parse("content://com.caffaine.users.provider/users"),
+            null,
+            "(${MyContentProvider.email} = \'$email\') AND " +
+                    "(${MyContentProvider.password} = \'$password\')",
+            null,
+            null
+        )
+
+        if (cursor!!.moveToFirst()) {
+            var user = user(
+                cursor.getString(cursor.getColumnIndex(MyContentProvider.name))
+                    .split(" ")[0],
+                cursor.getString(cursor.getColumnIndex(MyContentProvider.name))
+                    .split(" ")[1],
+                cursor.getString(cursor.getColumnIndex(MyContentProvider.email)),
+                cursor.getString(cursor.getColumnIndex(MyContentProvider.password)),
+                cursor.getString(cursor.getColumnIndex(MyContentProvider.phoneNumber))
+                )
+            userManager.currentUser = user
+            result = true;
+
+        } else {
+            Toast.makeText(this,"Email or password wrong",Toast.LENGTH_SHORT).show()
         }
-        email_edit_text.setError("")
-        password_edit_text.setError("")
-        Toast.makeText(this, error, Toast.LENGTH_SHORT).show()
-
 
         return result
     }
@@ -71,7 +89,7 @@ class login : AppCompatActivity() {
         ) {
             if (it.resultCode == Activity.RESULT_OK) {
 
-            }else if(it.resultCode == 55){
+            } else if (it.resultCode == 55) {
                 val value = it.data
                 email_edit_text.setText(value?.getStringExtra("email"))
                 password_edit_text.setText(value?.getStringExtra("password"))

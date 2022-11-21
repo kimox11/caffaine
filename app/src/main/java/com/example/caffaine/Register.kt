@@ -1,11 +1,13 @@
 package com.example.caffaine
 
+import android.content.ContentValues
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageButton
+import android.widget.Toast
 
 class Register : AppCompatActivity() {
     lateinit var back_button: ImageButton
@@ -47,9 +49,29 @@ class Register : AppCompatActivity() {
             if(validate(user,confirmationPassword)) {
                 intent.putExtra("email", email_edit_text.getText().toString())
                 intent.putExtra("password", password_edit_text.getText().toString())
-                userManager.users.add(user)
-                setResult(55, intent)
-                finish()
+                ////////////////////////////
+                //
+                val values = ContentValues() // class can carry my values
+
+                // fetching text from user
+                values.put(MyContentProvider.name, firstName.trim() +" "+lastName.trim())
+                values.put(MyContentProvider.email, email)
+                values.put(MyContentProvider.password, password)
+                values.put(MyContentProvider.phoneNumber, phoneNumber)
+
+                // inserting into database through content URI
+                try {
+                    contentResolver.insert(MyContentProvider.CONTENT_URI, values)
+                    setResult(55, intent)
+                    finish()
+                }catch (e : Exception){
+                        Toast.makeText(this,e.message, Toast.LENGTH_SHORT).show()
+
+                }
+
+
+
+
             }
         }
 
