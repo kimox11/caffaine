@@ -16,11 +16,26 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Caffaine"
         tools:targetApi="31">
+        <activity
+            android:name=".RvItem"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".RvActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+
         <provider
             android:name=".MyContentProvider"
             android:authorities="com.caffaine.users.provider"
             android:enabled="true"
-            android:exported="true"></provider>
+            android:exported="true" />
 
         <service
             android:name=".DownloadPhotoFromUrl"

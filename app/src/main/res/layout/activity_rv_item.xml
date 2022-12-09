@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_margin="10dp"
+    android:id="@+id/res_card"
+    app:cardElevation="6dp">
+
+    <LinearLayout
+        android:id="@+id/res_background_lLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:padding="5dp">
+
+        <ImageView
+            android:id="@+id/imageview"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/mac" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:weightSum="3">
+
+            <TextView
+                android:id="@+id/res_menu_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                tools:text="Mac"
+               android:gravity="center_vertical"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:textAlignment="center"
+                android:autoSizeTextType="uniform"
+                android:textColor="#333333"
+                tools:ignore="RtlCompat" />
+            <TextView
+                android:id="@+id/res_menu_description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                tools:text="Description:\njgiuugbhjkbguig\niugt7t87t7t"
+                android:textAlignment="center"
+                android:textColor="#717171"
+                />
+        </LinearLayout>
+
+    </LinearLayout>
+</androidx.cardview.widget.CardView>
