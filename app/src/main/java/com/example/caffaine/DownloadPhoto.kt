@@ -21,7 +21,7 @@ class DownloadPhoto : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_download_photo)
-        IntentFilter(userManager.PHOTO_BROADCAST).also {
+        IntentFilter(userManager.PHOTO_BROADCAST).also {   //en da bytndeh
             LocalBroadcastManager.getInstance(this).registerReceiver(photoReceiver(),it)
         }
         download = findViewById(R.id.btn_download)

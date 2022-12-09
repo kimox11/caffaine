@@ -33,74 +33,67 @@ class RvActivity : AppCompatActivity() {
         res_menu.add(
             ItemsViewModel(
                 R.drawable.mac,
-                "Mac",
-                "Ho ho ho ho ho ho ho Ho ho ho ho ho ho ho Ho ho ho ho ho ho ho\n" +
+                "BOLO",
+                "Hsdfsdfsdf\n" +
+                        "gfhgfjgf\n" +
+                        "Ho ho ho ho ho ho ho"
+            ))
+        res_menu.add(
+                ItemsViewModel(
+                    R.drawable.mac,
+                    "rtyy",
+                    "Ho hsdfdsfsdfho ho ho ho ho ho"
+
+                ))
+        res_menu.add(
+            ItemsViewModel(
+                R.drawable.mac,
+                "uuuu",
+                "Ho ho ho ho ho ho ho"
+            ))
+        res_menu.add(
+                ItemsViewModel(
+                    R.drawable.mac,
+                    "hardes",
+                    "chesseeeee"
+
+                ))
+        res_menu.add(
+            ItemsViewModel(
+                R.drawable.mac,
+                "heart attack",
+                "attaccckkkk"
+            ))
+        res_menu.add(
+                ItemsViewModel(
+                    R.drawable.mac,
+                    "M",
+                    "Ho ho ho Ho ho ho ho ho ho ho\n" +
+                            "Ho ho ho ho ho ho ho"
+                ))
+        res_menu.add(
+            ItemsViewModel(
+                R.drawable.mac,
+                "KK",
+                "o ho ho ho\n" +
                         "Ho ho ho ho ho ho ho\n" +
                         "Ho ho ho ho ho ho ho"
             ))
         res_menu.add(
                 ItemsViewModel(
                     R.drawable.mac,
-                    "Mac",
-                    "Ho ho ho ho ho ho ho Ho ho ho ho ho ho ho Ho ho ho ho ho ho ho\n" +
+                    "7amza",
+                    "Hsdfsdfsdfo ho\n" +
                             "Ho ho ho ho ho ho ho\n" +
                             "Ho ho ho ho ho ho ho"
                 ))
         res_menu.add(
             ItemsViewModel(
                 R.drawable.mac,
-                "Mac",
-                "Ho ho ho ho ho ho ho Ho ho ho ho ho ho ho Ho ho ho ho ho ho ho\n" +
-                        "Ho ho ho ho ho ho ho\n" +
-                        "Ho ho ho ho ho ho ho"
-            ))
-        res_menu.add(
-                ItemsViewModel(
-                    R.drawable.mac,
-                    "Mac",
-                    "Ho ho ho ho ho ho ho Ho ho ho ho ho ho ho Ho ho ho ho ho ho ho\n" +
-                            "Ho ho ho ho ho ho ho\n" +
-                            "Ho ho ho ho ho ho ho"
-                ))
-        res_menu.add(
-            ItemsViewModel(
-                R.drawable.mac,
-                "Mac",
-                "Ho ho ho ho ho ho ho Ho ho ho ho ho ho ho Ho ho ho ho ho ho ho\n" +
-                        "Ho ho ho ho ho ho ho\n" +
-                        "Ho ho ho ho ho ho ho"
-            ))
-        res_menu.add(
-                ItemsViewModel(
-                    R.drawable.mac,
-                    "Mac",
-                    "Ho ho ho ho ho ho ho Ho ho ho ho ho ho ho Ho ho ho ho ho ho ho\n" +
-                            "Ho ho ho ho ho ho ho\n" +
-                            "Ho ho ho ho ho ho ho"
-                ))
-        res_menu.add(
-            ItemsViewModel(
-                R.drawable.mac,
-                "Mac",
-                "Ho ho ho ho ho ho ho Ho ho ho ho ho ho ho Ho ho ho ho ho ho ho\n" +
-                        "Ho ho ho ho ho ho ho\n" +
-                        "Ho ho ho ho ho ho ho"
-            ))
-        res_menu.add(
-                ItemsViewModel(
-                    R.drawable.mac,
-                    "Mac",
-                    "Ho ho ho ho ho ho ho Ho ho ho ho ho ho ho Ho ho ho ho ho ho ho\n" +
-                            "Ho ho ho ho ho ho ho\n" +
-                            "Ho ho ho ho ho ho ho"
-                ))
-        res_menu.add(
-            ItemsViewModel(
-                R.drawable.mac,
-                "Mac",
-                "Ho ho ho ho ho ho ho Ho ho ho ho ho ho ho Ho ho ho ho ho ho ho\n" +
-                        "Ho ho ho ho ho ho ho\n" +
-                        "Ho ho ho ho ho ho ho"
+                "KFS",
+                "o ho ho ho ho Ho ho ho ho ho ho ho\n" +
+                        "fsdfsdfsdf\n" +
+                        " ho ho ho"
             ))
 
         // This will pass the ArrayList to our Adapter

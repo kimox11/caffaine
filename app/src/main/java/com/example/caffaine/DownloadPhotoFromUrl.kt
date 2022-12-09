@@ -29,17 +29,17 @@ class DownloadPhotoFromUrl (): Service() {
                 var bmp: Bitmap? = null
                 var responseCode = -1
                 val url = URL(path) //"http://192.xx.xx.xx/mypath/img1.jpg
-                val con: HttpURLConnection = url.openConnection() as HttpURLConnection
+                val con: HttpURLConnection = url.openConnection() as HttpURLConnection // open connection
                 con.setDoInput(true)
                 con.connect()
-                responseCode = con.getResponseCode()
+                responseCode = con.getResponseCode()// get response after opening connection
                 if (responseCode == HttpURLConnection.HTTP_OK) {
                     //download
                     `in` = con.getInputStream()
-                    bmp = BitmapFactory.decodeStream(`in`)
-                    `in`.close()
+                    bmp = BitmapFactory.decodeStream(`in`) // put pic here
+                    `in`.close() // close connection
                     var intentResult: Intent = Intent(userManager.PHOTO_BROADCAST)
-                    intentResult.putExtra("img", bmp)
+                    intentResult.putExtra("img", bmp)// put pic in this intent
                     LocalBroadcastManager.getInstance(this).sendBroadcast(intentResult)
                 }
             } catch (ex: Exception) {
