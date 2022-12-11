@@ -34,11 +34,12 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 tools:text="Mac"
+                android:maxLines="1"
                android:gravity="center_vertical"
                 android:paddingStart="10dp"
                 android:paddingEnd="10dp"
                 android:textAlignment="center"
-                android:autoSizeTextType="uniform"
+                android:textSize="30sp"
                 android:textColor="#333333"
                 tools:ignore="RtlCompat" />
             <TextView
@@ -47,6 +48,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="2"
                 android:paddingStart="10dp"
+                android:maxLines="5"
                 android:paddingEnd="10dp"
                 tools:text="Description:\njgiuugbhjkbguig\niugt7t87t7t"
                 android:textAlignment="center"

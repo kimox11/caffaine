@@ -3,14 +3,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
-import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.example.caffaine.ItemsViewModel
-import com.example.caffaine.R
-import com.example.caffaine.RvActivity
+import com.example.caffaine.*
 
-class CustomAdapter(private val mList: List<ItemsViewModel>) : RecyclerView.Adapter<CustomAdapter.ViewHolder>() {
+class CustomAdapter(private var mList: ArrayList<restaurant>) : RecyclerView.Adapter<CustomAdapter.ViewHolder>() {
 
 
 
@@ -27,18 +24,32 @@ class CustomAdapter(private val mList: List<ItemsViewModel>) : RecyclerView.Adap
     // binds the list items to a view
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
 
-        val ItemsViewModel = mList[position]
+        val ItemsViewModel = mList.get(position)
 
         // sets the image to the imageview from our itemHolder class
-        holder.imageView.setImageResource(ItemsViewModel.image)
+        holder.imageView.setImageResource(ItemsViewModel.img)
 
         // sets the text to the textview from our itemHolder class
         holder.title.text = ItemsViewModel.title
         holder.description.text = ItemsViewModel.description
         holder.element.setOnClickListener{
+            if (RvActivity.switch == 0){
+                setData(ItemsViewModel.meals)
+                RvActivity.switch = 1
+                RvActivity.choosen_res_img.setImageResource(ItemsViewModel.img)
+                RvActivity.choosen_res_title.text = ItemsViewModel.title
+                RvActivity.choosen_res_card.visibility = View.VISIBLE
+            }else{
 
+            }
         }
 
+    }
+
+    fun setData(m: ArrayList<restaurant>){
+        mList = m
+        notifyDataSetChanged()
+        RvActivity.recyclerview.scrollToPosition(0)
     }
 
     // return the number of the items in the list
