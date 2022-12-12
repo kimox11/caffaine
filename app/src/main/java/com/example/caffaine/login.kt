@@ -22,6 +22,7 @@ class login : AppCompatActivity() {
     lateinit var email_edit_text: EditText
     lateinit var password_edit_text: EditText
     lateinit var go_to_home: Button
+    lateinit var wv:Button
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
@@ -29,7 +30,11 @@ class login : AppCompatActivity() {
         go_to_home = findViewById(R.id.login_button)
         email_edit_text = findViewById(R.id.email_log)
         password_edit_text = findViewById(R.id.password_log)
-
+        wv = findViewById(R.id.Wv_button)
+        wv.setOnClickListener {
+            intent = Intent(this,Web_View::class.java)
+            startActivity(intent)
+        }
 
         go_to_signup.setOnClickListener {
             var intent = Intent(this, Register::class.java)
@@ -55,7 +60,7 @@ class login : AppCompatActivity() {
         // creating a cursor object of the
         // content URI
         val cursor = contentResolver.query(
-            Uri.parse("content://com.caffaine.users.provider/users"),
+           MyContentProvider.CONTENT_URI,
             null,
             "(${MyContentProvider.email} = \'$email\') AND " +
                     "(${MyContentProvider.password} = \'$password\')",
@@ -97,25 +102,3 @@ class login : AppCompatActivity() {
             }
         }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -81,6 +81,7 @@ class DataManager {
                             "Ho ho ho ho ho ho ho"
                 ))
 
+
             // add meal data for each restaurant
             var menu:ArrayList<restaurant> = ArrayList()
             menu.add(
@@ -156,6 +157,7 @@ class DataManager {
                             "Ho ho ho ho ho ho ho\n" +
                             "Ho ho ho ho ho ho ho"
                 ))
+
             for (restaurant in list_of_restaurants){
                 restaurant.meals = menu
             }
