@@ -27,13 +27,15 @@ class Web_View : AppCompatActivity() {
                 "         \n" +
                 "            <input type=\"text\" id=\"firstname\" name=\"first-name\" placeholder=\"Your name\">\n" +
                 "            <br><br>\n" +
-                "             <input type=\"submit\" class=\"sign-up\" onclick=\"myFunction()\">\n" +
+                "             <input type=\"submit\" class=\"\" onclick=\"myFunction()\">\n" +
                 "\n" +
                 "        </div> \n" +
                 "         <div id = \"wel\" class=\"hide\">\n" +
                 "             <h1 id = \"welname\" style=\"color: white\"></h1>\n" +
                 "         </div>\n" +
-                "\n" +
+                "         <div id=\"back\" class=\"hide\">\n" +
+                "              <input type=\"submit\" value=\"Back\"   onclick=\"myFunction1()\">\n" +
+                "         </div>\n" +
                 "\n" +
                 "</body>\n" +
                 "<style type=\"text/css\">\n" +
@@ -42,17 +44,27 @@ class Web_View : AppCompatActivity() {
                 "     }\n" +
                 "</style>\n" +
                 "<script type=\"text/javascript\">\n" +
-                "    function myFunction() {\n" +
                 "    var name = document.getElementById(\"firstname\");\n" +
                 "    var home = document.getElementById(\"home\");\n" +
                 "    var wel = document.getElementById(\"wel\");\n" +
                 "    var welname = document.getElementById(\"welname\");\n" +
+                "    var back = document.getElementById(\"back\");\n" +
+                "    var txtboxname = name.value+\"\";\n" +
+                "\n" +
+                "    function myFunction() {\n" +
+                "    var name = document.getElementById(\"firstname\");\n" +
                 "    var txtboxname = name.value+\"\";\n" +
                 "    welname.innerHTML = \"welcome \" + txtboxname;\n" +
                 "    home.classList.add (\"hide\");\n" +
                 "    wel.classList.remove (\"hide\");\n" +
-                "    console.log(name);\n" +
-                "}\n" +
+                "    back.classList.remove (\"hide\");\n" +
+                "    }\n" +
+                "\n" +
+                "    function myFunction1() {\n" +
+                "    back.classList.add (\"hide\");\n" +
+                "    home.classList.remove (\"hide\");\n" +
+                "    wel.classList.add (\"hide\");\n" +
+                "    }\n" +
                 "    \n" +
                 "</script>\n" +
                 "</html>\n"
@@ -64,8 +76,8 @@ class Web_View : AppCompatActivity() {
             Base64.NO_PADDING
         )
         webview.loadData(encodedHtml, "text/html", "base64")
-        //webview.loadUrl("https://translate.google.com/")
-        //webview.loadUrl("https://www.youtube.com/")
+//        webview.loadUrl("https://translate.google.com/")
+//        webview.loadUrl("https://www.youtube.com/")
 
 
     }

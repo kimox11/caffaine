@@ -39,8 +39,6 @@ class CustomAdapter(private var mList: ArrayList<restaurant>) : RecyclerView.Ada
                 RvActivity.choosen_res_img.setImageResource(ItemsViewModel.img)
                 RvActivity.choosen_res_title.text = ItemsViewModel.title
                 RvActivity.choosen_res_card.visibility = View.VISIBLE
-            }else{
-
             }
         }
 
@@ -63,6 +61,5 @@ class CustomAdapter(private var mList: ArrayList<restaurant>) : RecyclerView.Ada
         val title: TextView = itemView.findViewById(R.id.res_menu_title)
         val description: TextView = itemView.findViewById(R.id.res_menu_description)
         val element:androidx.cardview.widget.CardView = itemView.findViewById(R.id.res_card)
-
     }
 }

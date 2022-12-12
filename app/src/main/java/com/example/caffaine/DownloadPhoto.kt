@@ -44,5 +44,11 @@ class DownloadPhoto : AppCompatActivity() {
          img.setImageBitmap(bmp)
     }
 
+    override fun onStop() {
+        super.onStop()
+        IntentFilter(userManager.PHOTO_BROADCAST).also {   //en da bytndeh
+            LocalBroadcastManager.getInstance(this).unregisterReceiver(photoReceiver())
+        }
+    }
 
 }
