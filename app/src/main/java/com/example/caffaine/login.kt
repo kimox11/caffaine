@@ -42,7 +42,7 @@ class login : AppCompatActivity() {
         }
 
         go_to_home.setOnClickListener {
-            var intent = Intent(this, Web_View::class.java)
+            var intent = Intent(this, res::class.java)
             //startActivity(intent)
             if (validate()) {
                 startActivity(intent)

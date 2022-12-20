@@ -17,19 +17,20 @@
         android:theme="@style/Theme.Caffaine"
         tools:targetApi="31">
         <activity
-            android:name=".Web_View"
+            android:name=".res"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".RvItem"
+            android:name=".Web_View"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
+
         <activity
             android:name=".RvActivity"
             android:exported="false">
