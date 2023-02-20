@@ -32,15 +32,15 @@ class CustomAdapter(private var mList: ArrayList<restaurant>) : RecyclerView.Ada
         // sets the text to the textview from our itemHolder class
         holder.title.text = ItemsViewModel.title
         holder.description.text = ItemsViewModel.description
-        holder.element.setOnClickListener{
-            if (RvActivity.switch == 0){
-                setData(ItemsViewModel.meals)
-                RvActivity.switch = 1
-                RvActivity.choosen_res_img.setImageResource(ItemsViewModel.img)
-                RvActivity.choosen_res_title.text = ItemsViewModel.title
-                RvActivity.choosen_res_card.visibility = View.VISIBLE
-            }
-        }
+//        holder.element.setOnClickListener{
+//            if (RvActivity.switch == 0){
+//                setData(ItemsViewModel.meals)
+//                RvActivity.switch = 1
+//                RvActivity.choosen_res_img.setImageResource(ItemsViewModel.img)
+//                RvActivity.choosen_res_title.text = ItemsViewModel.title
+//                RvActivity.choosen_res_card.visibility = View.VISIBLE
+//            }
+//        }
 
     }
 
