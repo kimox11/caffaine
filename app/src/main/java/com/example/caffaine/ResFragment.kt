@@ -1,6 +1,7 @@
 package com.example.caffaine
 
 import CustomAdapter
+import MarsPhotosAdapter
 import android.annotation.SuppressLint
 import android.content.Context
 import android.os.Bundle
@@ -11,6 +12,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import network.MarsPhoto
 
 
 class ResFragment : Fragment() {
@@ -35,7 +37,7 @@ class ResFragment : Fragment() {
         val activity = activity as Context
         if(view.findViewById<RecyclerView>(R.id.recyclerview) != null){
             RvActivity.recyclerview = view.findViewById<RecyclerView>(R.id.recyclerview)
-            RvActivity.adapter = CustomAdapter(DataManager.list_of_restaurants)
+            RvActivity.adapter = MarsPhotosAdapter(listOf(MarsPhoto("5","2")))
             RvActivity.recyclerview = view.findViewById(R.id.recyclerview)
             RvActivity.recyclerview.layoutManager = LinearLayoutManager(activity)
             RvActivity.recyclerview.adapter = CustomAdapter(DataManager.list_of_restaurants)

@@ -32,8 +32,7 @@ class Register : AppCompatActivity() {
         phonenumber_edit_text = findViewById(R.id.phone_number_reg)
 
         back_button.setOnClickListener {
-            var intent = Intent(this,login::class.java)
-            startActivity(intent)
+            finish()
         }
 
 

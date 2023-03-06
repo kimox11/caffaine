@@ -30,11 +30,8 @@ class login : AppCompatActivity() {
         go_to_home = findViewById(R.id.login_button)
         email_edit_text = findViewById(R.id.email_log)
         password_edit_text = findViewById(R.id.password_log)
-        wv = findViewById(R.id.Wv_button)
-        wv.setOnClickListener {
-            intent = Intent(this,Web_View::class.java)
-            startActivity(intent)
-        }
+        email_edit_text.setText("k@k.com")
+        password_edit_text.setText("12345678")
 
         go_to_signup.setOnClickListener {
             var intent = Intent(this, Register::class.java)

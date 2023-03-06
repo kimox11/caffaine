@@ -75,9 +75,9 @@ class Web_View : AppCompatActivity() {
             webHtml.toByteArray(),
             Base64.NO_PADDING
         )
-        webview.loadData(encodedHtml, "text/html", "base64")
+          webview.loadData(encodedHtml, "text/html", "base64")
 //        webview.loadUrl("https://translate.google.com/")
-//        webview.loadUrl("https://www.youtube.com/")
+    //       webview.loadUrl("https://www.youtube.com/")
 
 
     }

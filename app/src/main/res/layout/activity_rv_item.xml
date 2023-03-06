@@ -54,6 +54,7 @@
                 android:textAlignment="center"
                 android:textColor="#717171"
                 />
+
         </LinearLayout>
 
     </LinearLayout>

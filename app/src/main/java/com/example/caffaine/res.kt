@@ -14,7 +14,7 @@ class res : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_res)
-        var f = Fragment(R.layout.activity_rv)
+        var f = Fragment(R.layout.activity_rv)//change
         val fram = supportFragmentManager.beginTransaction()
         fram.replace(R.id.fragmentContainerView, f)
         fram.commit()
