@@ -73,23 +73,26 @@ class RvActivity : AppCompatActivity(), status {
             choosen_res_card.visibility = View.GONE
             recyclerview.visibility = View.GONE
         }
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            val name = "hi"
+            val descriptionText = "hi"
+            val importance = NotificationManager.IMPORTANCE_DEFAULT
+            val channel = NotificationChannel("115492", name, importance).apply {
+                description = descriptionText
+            }
+            // Register the channel with the system
+            val notificationManager: NotificationManager =
+                getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
+            notificationManager.createNotificationChannel(channel)
+        }
+
         call.enqueue(object : retrofit2.Callback<MutableList<MarsPhoto>> {
             override fun onResponse(
                 call: Call<MutableList<MarsPhoto>>,
                 response: Response<MutableList<MarsPhoto>>
             ) {
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-                    val name = "hi"
-                    val descriptionText = "hi"
-                    val importance = NotificationManager.IMPORTANCE_DEFAULT
-                    val channel = NotificationChannel("115492", name, importance).apply {
-                        description = descriptionText
-                    }
-                    // Register the channel with the system
-                    val notificationManager: NotificationManager =
-                        getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
-                    notificationManager.createNotificationChannel(channel)
-                }
+
                 recyclerview.apply {
                     adapter = MarsPhotosAdapter(response.body()!!)
                     loading.visibility = View.GONE
@@ -99,13 +102,19 @@ class RvActivity : AppCompatActivity(), status {
             }
 
             override fun onFailure(call: Call<MutableList<MarsPhoto>>, t: Throwable) {
+                var builder = NotificationCompat.Builder(this@RvActivity, "115492")
+                    .setSmallIcon(R.drawable.mac)
+                    .setContentTitle("Error")
+                    .setContentText("ther is no internet Connection")
+                    .setPriority(NotificationCompat.PRIORITY_DEFAULT)
 
+                NotificationManagerCompat.from(this@RvActivity).notify(1674852, builder.build())
             }
 
         })
         // ArrayList of class ItemsViewModel
         //set Data
-        DataManager.setData()
+        //DataManager.setData()
 
         // This will pass the ArrayList to our Adapter
         //adapter = CustomAdapter(DataManager.list_of_restaurants)

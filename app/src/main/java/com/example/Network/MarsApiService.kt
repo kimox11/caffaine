@@ -8,7 +8,6 @@ import retrofit2.Call
 import retrofit2.create
 import retrofit2.http.GET
 object MarsApiService{
-    private val client = OkHttpClient.Builder().build()
     private val BASE_URL = "https://android-kotlin-fun-mars-server.appspot.com"
     private val retrofit = Retrofit.Builder()
         .addConverterFactory(Json.asConverterFactory(MediaType.get("application/json")))

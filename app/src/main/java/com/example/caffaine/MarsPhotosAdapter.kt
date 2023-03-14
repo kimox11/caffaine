@@ -39,7 +39,6 @@ class MarsPhotosAdapter(private var mList: List<MarsPhoto>) : RecyclerView.Adapt
 
         // sets the image to the imageview from our itemHolder class
         //holder.imageView.setImageResource(ItemsViewModel.img)
-        v
         // sets the text to the textview from our itemHolder class
         holder.title.text = ItemsViewModel.id
         holder.description.text = ItemsViewModel.img_src
@@ -54,13 +53,13 @@ class MarsPhotosAdapter(private var mList: List<MarsPhoto>) : RecyclerView.Adapt
 
 
             }catch (e: java.lang.Exception){
-                var builder = NotificationCompat.Builder(v.context, "115492")
-                    .setSmallIcon(R.drawable.mac)
-                    .setContentTitle("Error")
-                    .setContentText("can't Download photo : ${ItemsViewModel.id}")
-                    .setPriority(NotificationCompat.PRIORITY_DEFAULT)
-
-                NotificationManagerCompat.from(v.context).notify(1674852, builder.build())
+//                var builder = NotificationCompat.Builder(v.context, "115492")
+//                    .setSmallIcon(R.drawable.mac)
+//                    .setContentTitle("Error")
+//                    .setContentText("can't Download photo : ${ItemsViewModel.id}")
+//                    .setPriority(NotificationCompat.PRIORITY_DEFAULT)
+//
+//                NotificationManagerCompat.from(v.context).notify(1674852, builder.build())
             }
         }
 //        holder.element.setOnClickListener{
