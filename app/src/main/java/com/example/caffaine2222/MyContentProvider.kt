@@ -1,4 +1,4 @@
-package com.example.caffaine
+package com.example.caffaine2222
 
 import android.content.*
 import android.database.Cursor
@@ -7,7 +7,6 @@ import android.database.sqlite.SQLiteException
 import android.database.sqlite.SQLiteOpenHelper
 import android.database.sqlite.SQLiteQueryBuilder
 import android.net.Uri
-import android.widget.Toast
 
 
 class MyContentProvider : ContentProvider() {

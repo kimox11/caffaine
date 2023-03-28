@@ -1,0 +1,76 @@
+{
+  "project_info": {
+    "project_number": "404650031080",
+    "project_id": "caffaine-c65a7",
+    "storage_bucket": "caffaine-c65a7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:404650031080:android:882bda17918fbfcdcf565d",
+        "android_client_info": {
+          "package_name": "com.example.caffaine1111"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "404650031080-7oqk6jp3psa7ohgps5k1uuaj0lj7a6ro.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAmxBGELkmGAeR6Zg1doFMlbnokBkuPw2Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "404650031080-7oqk6jp3psa7ohgps5k1uuaj0lj7a6ro.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:404650031080:android:ed8d4fa09d47719fcf565d",
+        "android_client_info": {
+          "package_name": "com.example.caffaine2222"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "404650031080-94498ko4k4o2snv943guo0vu0g2kh43f.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.caffaine2222",
+            "certificate_hash": "1c3ca6e1035b0bf179abf6e9eb27392c8d8394b0"
+          }
+        },
+        {
+          "client_id": "404650031080-7oqk6jp3psa7ohgps5k1uuaj0lj7a6ro.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAmxBGELkmGAeR6Zg1doFMlbnokBkuPw2Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "404650031080-7oqk6jp3psa7ohgps5k1uuaj0lj7a6ro.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

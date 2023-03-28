@@ -1,7 +1,6 @@
-package com.example.caffaine
+package com.example.caffaine2222
 
 import android.content.ContentValues
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button

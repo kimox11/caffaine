@@ -1,33 +1,28 @@
-package com.example.caffaine
+package com.example.caffaine2222
 
-import CustomAdapter
 import MarsPhotosAdapter
-import android.app.Application
 import android.app.NotificationChannel
 import android.app.NotificationManager
 import android.content.Context
 import android.os.Build
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
 import kotlinx.coroutines.*
 import network.ApiService
 import network.MarsApiService
 import network.MarsPhoto
 import retrofit2.Call
 import retrofit2.Response
-import java.io.IOException
-import java.lang.Runnable
-import javax.security.auth.callback.Callback
 
 enum class MarsUiState {
     Success,Error,Loading,
@@ -38,6 +33,7 @@ interface status{
 }
 
 class RvActivity : AppCompatActivity(), status {
+
     companion object{
         var switch = 0
         lateinit var adapter: MarsPhotosAdapter
@@ -51,6 +47,7 @@ class RvActivity : AppCompatActivity(), status {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        Firebase.auth.signOut()
         setContentView(R.layout.activity_rv)
         recyclerview = findViewById<RecyclerView>(R.id.recyclerview)
         choosen_res_card = findViewById(R.id.choosedRes_card)

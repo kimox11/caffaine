@@ -1,9 +1,8 @@
-package com.example.caffaine
+package com.example.caffaine2222
 
 import android.content.Intent
 import android.content.IntentFilter
 import android.graphics.Bitmap
-import android.graphics.BitmapFactory
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText

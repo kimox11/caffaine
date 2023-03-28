@@ -1,4 +1,4 @@
-package com.example.caffaine
+package com.example.caffaine2222
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4

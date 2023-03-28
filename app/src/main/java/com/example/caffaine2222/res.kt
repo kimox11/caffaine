@@ -1,12 +1,9 @@
-package com.example.caffaine
+package com.example.caffaine2222
 
-import CustomAdapter
 import android.annotation.SuppressLint
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 
 
 class res : AppCompatActivity() {

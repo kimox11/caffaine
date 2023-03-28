@@ -1,18 +1,11 @@
-package com.example.caffaine
+package com.example.caffaine2222
 
-import android.R
-import android.R.attr.path
-import android.annotation.SuppressLint
-import android.app.DownloadManager
 import android.app.Service
 import android.content.Intent
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.os.IBinder
-import android.provider.ContactsContract.CommonDataKinds.Website.URL
-import android.widget.Toast
 import androidx.localbroadcastmanager.content.LocalBroadcastManager
-import java.io.File
 import java.io.InputStream
 import java.net.HttpURLConnection
 import java.net.URL

@@ -5,7 +5,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.example.caffaine.*
+import com.example.caffaine2222.*
 
 class CustomAdapter(private var mList: ArrayList<restaurant>) : RecyclerView.Adapter<CustomAdapter.ViewHolder>() {
 
