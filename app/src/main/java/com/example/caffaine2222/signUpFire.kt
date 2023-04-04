@@ -19,6 +19,7 @@ class signUpFire: AppCompatActivity(){
     public override fun onStart() {
         super.onStart()
         // Check if user is signed in (non-null) and update UI accordingly.
+        auth = Firebase.auth
         val currentUser = auth.currentUser
         if(currentUser != null){
                 var intent = Intent(this, RvActivity::class.java)
