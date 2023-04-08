@@ -53,6 +53,7 @@ class signUpFire: AppCompatActivity(){
                     }
             }
         }
+
     }
 
     private fun validate(Email:String,Password:String): Boolean {

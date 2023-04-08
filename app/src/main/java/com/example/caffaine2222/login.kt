@@ -31,6 +31,7 @@ class login : AppCompatActivity() {
     private lateinit var auth: FirebaseAuth
     lateinit var oneTapClient: SignInClient
     lateinit var signInRequest: BeginSignInRequest
+    lateinit var forgotPaswword: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -42,6 +43,7 @@ class login : AppCompatActivity() {
         email_edit_text = findViewById(R.id.email_log)
         password_edit_text = findViewById(R.id.password_log)
         gmail_button = findViewById(R.id.gmail)
+        forgotPaswword = findViewById(R.id.forgotPassword)
         email_edit_text.setText("k@k.com")
         password_edit_text.setText("12345678")
 
@@ -102,6 +104,11 @@ class login : AppCompatActivity() {
                 Log.d("Error", it.localizedMessage)
             }
 
+        }
+
+        forgotPaswword.setOnClickListener {
+            var intent = Intent(this, ForgotPassword::class.java)
+            startActivity(intent)
         }
     }
 
